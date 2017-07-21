@@ -24,10 +24,11 @@ def open_txt(txtpath,csvfile, remove = [],i = 0, y = -1):
             try:
                 with open(txtpath, 'r') as f:
                     z = i
-                    if i == 0:
-                        i = i
-                    else:
-                        i -= 1
+                    # if i == 0:
+                    #     i = i
+                    # else:
+                    #     i -= 1
+                    i if i == 0 else i-=1
                     for n in f.readlines()[i:y]:
                         if z not in remove:#判断当前行是否需要remove
                             for str in n.split('|'):#拆分str
